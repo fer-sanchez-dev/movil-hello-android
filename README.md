@@ -37,4 +37,4 @@ Pinterest: Usa Kotlin para toda su capa de Android
 Uber: Adoptó Kotlin para mejorar la seguridad y reducir bugs en su app de conductores
 
 ## Capturas de Pantalla
-(docs/captura_emulador.png)
+app/docs/captura_emulador.png
