@@ -38,3 +38,31 @@ Uber: Adoptó Kotlin para mejorar la seguridad y reducir bugs en su app de condu
 
 ## Capturas de Pantalla
 app/docs/captura_emulador.png
+
+## Taller 2 - Arquitectura MVVM
+
+### Respuestas a Preguntas Conceptuales
+
+#### 1. ¿Qué problema resuelve el ViewModel en Android?
+El ViewModel resuelve el problema de perder los datos cuando la pantalla rota o cuando el sistema reinicia la Activity. Antes de ViewModel, si girabas el celular todos los datos que tenías cargados se perdían y tocaba volver a cargarlos. El ViewModel guarda esos datos de forma separada a la pantalla, entonces aunque el Fragment se destruya y recree, los datos siguen ahí.
+
+#### 2. ¿Por qué LiveData es "lifecycle-aware" y qué beneficio trae?
+LiveData es "lifecycle-aware" porque sabe en qué estado está el Fragment, si está activo, pausado o destruido. El beneficio es que solo actualiza la pantalla cuando el Fragment está activo, evitando errores como intentar actualizar una pantalla que ya no existe, lo cual antes causaba crashes en la app.
+
+#### 3. Explica con tus propias palabras el flujo de datos en MVVM
+La pantalla (Fragment) le pide datos al ViewModel. El ViewModel los busca a través del Repository, que es quien sabe de dónde sacarlos, ya sea de internet o de una base de datos local. Cuando los datos llegan, el ViewModel los guarda en LiveData y la pantalla que está observando ese LiveData se actualiza automáticamente.
+
+#### 4. ¿Qué ventaja tiene usar Fragments vs múltiples Activities?
+Con Fragments podemos tener varias "pantallas" dentro de una sola Activity, lo que hace la app más liviana y la navegación más fluida. Además los Fragments pueden compartir el mismo ViewModel, lo que facilita pasar datos entre pantallas sin complicaciones.
+
+#### 5. ¿Cómo ayuda el Repository Pattern a la arquitectura?
+El Repository actúa como intermediario entre el ViewModel y las fuentes de datos. Su ventaja es que el ViewModel no necesita saber de dónde vienen los datos, si son de una API, de una base de datos local o de cualquier otro lado. Eso hace que el código sea más organizado y fácil de modificar sin dañar otras partes.
+
+### Diagrama de Arquitectura
+
+<img width="738" height="673" alt="image" src="https://github.com/user-attachments/assets/236c61ed-678b-490c-9dc4-a3e50c8a8082" />
+
+### Capturas de Pantalla
+
+![Lista de usuarios](docs/screenshot_list.png)
+![Detalle de usuario](docs/screenshot_detail.png)
