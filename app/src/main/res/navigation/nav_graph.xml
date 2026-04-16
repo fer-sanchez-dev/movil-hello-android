@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/userListFragment">
+    app:startDestination="@id/taskListFragment">
 
     <fragment
         android:id="@+id/userListFragment"
@@ -27,4 +27,30 @@
             app:argType="integer" />
     </fragment>
 
+    <!-- Destino inicial: lista de tareas -->
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.sanchez.helloandroid.ui.task.TaskListFragment"
+        android:label="Lista de Tareas"
+        tools:layout="@layout/fragment_task_list">
+
+        <!-- Acción para ir al detalle -->
+        <action
+            android:id="@+id/actionTaskListToTaskDetail"
+            app:destination="@id/taskDetailFragment"/>
+    </fragment>
+
+    <!-- Destino: detalle/edición de tarea -->
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.sanchez.helloandroid.ui.task.TaskDetailFragment"
+        android:label="Detalle de Tarea"
+        tools:layout="@layout/fragment_task_detail">
+
+        <!-- Argumento que recibe: el id de la tarea (-1 = nueva) -->
+        <argument
+            android:name="taskId"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+    </fragment>
 </navigation>
