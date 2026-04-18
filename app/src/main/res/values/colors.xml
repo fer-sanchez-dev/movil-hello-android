@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="background">#FAF7F5</color>
+    <color name="pink_primary">#E8A0B4</color>
+    <color name="pink_dark">#C4728A</color>
+    <color name="pink_light">#FDEEF3</color>
+    <color name="text_dark">#3D2C2C</color>
+    <color name="text_gray">#9E8E8E</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="divider">#F0E6EA</color>
 </resources>
