@@ -66,3 +66,20 @@ El Repository actúa como intermediario entre el ViewModel y las fuentes de dato
 
 ![Lista de usuarios](docs/screenshot_list.png)
 ![Detalle de usuario](docs/screenshot_detail.png)
+
+Taller 3 - Lista de Tareas con Fragments y Recordatorios
+
+### ¿Qué se implementó?
+- Aplicación de lista de tareas con arquitectura Single Activity + Fragments
+- `TaskListFragment`: muestra la lista de tareas con un RecyclerView
+- `TaskDetailFragment`: permite crear y editar tareas
+- `TaskAdapter`: conecta la lista de tareas con el RecyclerView
+- Persistencia local con SharedPreferences y Gson para conservar las tareas al cerrar la app
+- `BroadcastReceiver` para recordatorios programados con AlarmManager
+- Diseño visual con colores neutros y detalles rosas
+
+### Opción de recordatorio utilizada
+Se utilizó la **Opción 2: sonido**, que reproduce el sonido de
+notificación predeterminado del dispositivo usando `RingtoneManager`,
+disparado a la hora ingresada por el usuario en formato HH:MM.
+
